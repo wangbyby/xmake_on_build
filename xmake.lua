@@ -2,6 +2,12 @@
 target("test")
     set_kind("static")
     add_files("./test.c")
+    on_load(function(target)
+        print("on_load")
+    end)
+    on_build(function(target)
+        print("on_build")
+    end)
 
 target("bin")
     set_kind("binary")
